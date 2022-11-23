@@ -8,7 +8,7 @@ class SingleBook extends React.Component {
     render() {
         return (
             <>
-             <Row className='row' xs={1} md={4} className="g-4">
+             <Row className='row g-4' xs={1} md={4}>
                 {this.props.books.map((book) => (
                   <Col>
                     <Card key={book.asin} style={{ width: "18rem" }}>
