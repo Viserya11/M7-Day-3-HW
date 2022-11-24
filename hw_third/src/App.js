@@ -1,9 +1,10 @@
 import WarningSign from './components/WarningSign';
 import './App.css';
 import MyBadge from './components/MyBadge';
-import SingleBook from './components/SingleBook';
+import BookList from './components/BookList';
 import 'bootstrap/dist/css/bootstrap.min.css';  
 import books from "./components/fantasy.json"
+import CommentArea from './components/CommentArea';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <WarningSign title='This is an alert'></WarningSign>
       <MyBadge class='badge' title='badge'></MyBadge>
       <hr></hr>
-      <SingleBook class="books" books={books}></SingleBook>
+      <BookList class="books" books={books}></BookList>
     </div>
   );
 }

@@ -1,31 +1,31 @@
-import { Card } from "react-bootstrap";
 import React from "react";
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import books from "./fantasy.json"
+import { Card, Col } from "react-bootstrap"
+import CommentArea from "./CommentArea";
 
 class SingleBook extends React.Component {
+    state = {
+        selected: false,
+    };
     render() {
         return (
-            <>
-             <Row className='row g-4' xs={1} md={4}>
-                {this.props.books.map((book) => (
-                  <Col>
-                    <Card key={book.asin} style={{ width: "18rem" }}>
-                        <Card.Img variant="top" src={book.img} />
-                        <Card.Body>
-                            <Card.Title>{book.title}</Card.Title>
-                        </Card.Body>
-                    </Card>
-                    </Col>
-                    
-                ))}
-                </Row>
-            </>
-            
+            <Col>
+            <Card key={this.props.book.asin} style={{ width: "18rem" }}>
+              <Card.Img onClick={() => {
+                  this.setState({
+                      selected: true
+                  })
+              }} variant="top" src={this.props.book.img} />
+              <Card.Body>
+                <Card.Title>{this.props.book.title}</Card.Title>
+                {this.state.selected && (
+                  <CommentArea asin={this.props.book.asin}></CommentArea>
+                )}
+              </Card.Body>
+            </Card>
+          </Col>
         );
-        
     }
 }
 
-export default SingleBook
+export default SingleBook;
+    
