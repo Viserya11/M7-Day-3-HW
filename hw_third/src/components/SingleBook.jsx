@@ -9,7 +9,7 @@ class SingleBook extends React.Component {
     render() {
         return (
             <Col>
-            <Card key={this.props.book.asin} style={{ width: "18rem" }}>
+            <Card key={this.props.book.asin} style={{ width: "14rem" }}>
               <Card.Img onClick={() => {
                   this.setState({
                       selected: true

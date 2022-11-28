@@ -39,7 +39,7 @@ class CommentArea extends Component {
 deleteComment = async (id) => {
 
     try {
-        let response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${id}`, {
+       await fetch(`https://striveschool-api.herokuapp.com/api/comments/${id}`, {
             method: 'DELETE',
           headers: {
                 Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZjZmUyZmQ0YmUzZDAwMTU4NDYwNDkiLCJpYXQiOjE2NjkyOTE2OTcsImV4cCI6MTY3MDUwMTI5N30.vyyYtgxu13tFizNGxsvLTZPCYPSsgNLDvy1Iu1qu7JE',
@@ -57,6 +57,7 @@ deleteComment = async (id) => {
 componentDidMount() {
     this.fetchComments(this.props.asin);
 }
+
     render() {
         return <> <ListGroup>
             {this.state.isLoading&&(

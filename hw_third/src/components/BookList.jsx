@@ -13,9 +13,9 @@ class BookList extends React.Component {
   render() {
     return (
       <>
-        <Row className="row g-4" xs={1} md={4}>
-          {this.props.books.map((book) => (
-           <SingleBook book={book}></SingleBook>
+        <Row className="row g-4" xs={2} md={this.props.selected ? 2 : 4} >
+          {this.props.books.slice(0,16).map((book) => (
+           <SingleBook book={book} setSelected={this.setSelected} ></SingleBook>
           ))}
         </Row>
       </>
