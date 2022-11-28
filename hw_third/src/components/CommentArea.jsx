@@ -58,8 +58,11 @@ componentDidMount() {
     this.fetchComments(this.props.asin);
 }
 
-componentDidUpdate() {
-  
+componentDidUpdate(previousProps) {
+  if (previousProps.book !== this.props.book) {
+    this.fetchComments();
+}
+
 }
 
     render() {
