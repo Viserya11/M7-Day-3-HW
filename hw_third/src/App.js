@@ -20,22 +20,25 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div>
-        <WarningSign title="This is an alert"></WarningSign>
-        <MyBadge class="badge" title="badge"></MyBadge>
-        <hr></hr>
-        <BookList
-          class="books"
-          books={books}
-          setSelected={this.setSelected}
-        />
+      <>
+        <div>
+          <WarningSign title="This is an alert"></WarningSign>
+          <MyBadge class="badge" title="badge"></MyBadge>
+          <hr></hr>
+          <BookList
+            class="books"
+            books={books}
+            setSelected={this.setSelected}
+          />
+        </div>
+
         <Col>
           <hr></hr>
           {this.state.selected && (
-              <CommentArea asin={this.props.book.asin}></CommentArea>
-            )}
+            <CommentArea asin={this.props.book.asin}></CommentArea>
+          )}
         </Col>
-      </div>
+      </>
     );
   }
 }
