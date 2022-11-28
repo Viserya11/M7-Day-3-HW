@@ -58,6 +58,10 @@ componentDidMount() {
     this.fetchComments(this.props.asin);
 }
 
+componentDidUpdate() {
+  
+}
+
     render() {
         return <> <ListGroup>
             {this.state.isLoading&&(
